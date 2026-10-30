@@ -1,0 +1,8 @@
+﻿-r base.txt
+pytest
+pytest-django
+pytest-cov
+factory-boy
+black
+flake8
+isort

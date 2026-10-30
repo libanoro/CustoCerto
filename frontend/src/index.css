@@ -1,0 +1,302 @@
+/* frontend/src/index.css */
+/* Estilos globais acessíveis (WCAG 2.1 AA) do CustoCerto. */
+
+:root {
+  --cor-fundo: #ffffff;
+  --cor-texto: #1f2328;
+  --cor-primaria: #0b5394;
+  --cor-primaria-escura: #083a68;
+  --cor-erro: #a00000;
+  --cor-borda: #57606a;
+  --cor-foco: #b45309;
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: var(--cor-texto);
+  background-color: var(--cor-fundo);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+* { box-sizing: border-box; }
+
+body { margin: 0; min-width: 320px; min-height: 100vh; }
+
+a:focus, button:focus, input:focus, select:focus, textarea:focus, [tabindex]:focus {
+  outline: 3px solid var(--cor-foco);
+  outline-offset: 2px;
+}
+
+.skip-link {
+  position: absolute; left: -9999px; top: 0;
+  background: var(--cor-primaria); color: #ffffff;
+  padding: 0.5rem 1rem; z-index: 100;
+}
+.skip-link:focus { left: 0; }
+
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+}
+
+.header {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 1rem; padding: 1rem 2rem;
+  background: var(--cor-primaria); color: #ffffff;
+}
+.header-titulo { margin: 0; font-size: 1.4rem; }
+.nav-lista { display: flex; gap: 1rem; list-style: none; margin: 0; padding: 0; }
+.nav-lista a { color: #ffffff; font-weight: 600; text-decoration: underline; }
+.nav-lista a:hover { color: #e8f0fe; }
+
+#conteudo { max-width: 960px; margin: 0 auto; padding: 2rem; }
+#conteudo:focus { outline: none; }
+
+.form-campo {
+  margin-bottom: 1rem; display: flex; flex-direction: column;
+  gap: 0.25rem; max-width: 420px;
+}
+.form-campo label { font-weight: 600; }
+.form-campo input, .form-campo select {
+  padding: 0.5rem; border: 1px solid var(--cor-borda); border-radius: 4px;
+  font-size: 1rem; background: #ffffff; color: var(--cor-texto);
+}
+
+.form-erro { color: var(--cor-erro); font-size: 0.875rem; min-height: 1.2em; }
+.form-erro-geral { color: var(--cor-erro); font-weight: 600; min-height: 1.2em; }
+
+.botao, button {
+  display: inline-block; padding: 0.5rem 1rem;
+  background: var(--cor-primaria); color: #ffffff;
+  border: none; border-radius: 4px; font-size: 1rem;
+  font-weight: 600; text-decoration: none; cursor: pointer;
+}
+.botao:hover, button:hover { background: var(--cor-primaria-escura); }
+
+.lista-anuncio { min-height: 1.2em; font-weight: 600; color: var(--cor-primaria-escura); }
+
+.tabela { width: 100%; border-collapse: collapse; margin-top: 1rem; }
+.tabela th, .tabela td {
+  border: 1px solid var(--cor-borda); padding: 0.5rem 0.75rem; text-align: left;
+}
+.tabela thead th { background: var(--cor-primaria); color: #ffffff; }
+.tabela tbody tr:nth-child(even) { background: #f0f4f8; }
+
+.header-usuario {
+  display: flex; align-items: center; gap: 1rem;
+  color: #ffffff; font-weight: 600;
+}
+.botao-sair {
+  background: #ffffff; color: var(--cor-primaria);
+  padding: 0.25rem 0.75rem; border-radius: 4px;
+  font-size: 0.9rem; border: none; cursor: pointer; font-weight: 600;
+}
+.botao-sair:hover { background: #e8f0fe; color: var(--cor-primaria-escura); }
+
+.login-container {
+  max-width: 420px; margin: 4rem auto; padding: 2rem;
+  border: 1px solid var(--cor-borda); border-radius: 8px;
+}
+
+/* CalculoExplicado (Marco 6) */
+.calculo-explicado {
+  margin-top: 2rem; padding: 1.5rem;
+  border: 1px solid var(--cor-borda); border-radius: 8px; background: #f9fafb;
+}
+.calculo-explicado h4 {
+  margin-top: 1.5rem; margin-bottom: 0.5rem; color: var(--cor-primaria-escura);
+}
+.lista-formulas { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.5rem; }
+.lista-formulas li {
+  padding: 0.75rem; background: #ffffff;
+  border: 1px solid #e5e7eb; border-radius: 4px;
+}
+.detalhes-como-calcula {
+  margin-top: 1.5rem; background: #ffffff;
+  border: 1px solid var(--cor-borda); border-radius: 4px;
+}
+.detalhes-como-calcula summary {
+  cursor: pointer; font-weight: 600; color: var(--cor-primaria);
+  padding: 0.75rem; user-select: none;
+}
+.detalhes-como-calcula summary:focus { outline: 3px solid var(--cor-foco); outline-offset: 2px; }
+.detalhes-conteudo {
+  padding: 0 1rem 1rem 1rem; display: flex; flex-direction: column;
+  gap: 0.75rem; border-top: 1px solid #e5e7eb;
+}
+.detalhes-conteudo p { margin: 0.5rem 0 0 0; }
+/* Simulador de Margem (Marco 6) */
+.simulador-margem {
+  background: #ffffff;
+  padding: 1rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+.simulador-margem .form-campo {
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+  max-width: 100%;
+}
+.simulador-margem input[type="range"] {
+  flex: 1;
+}
+.simulador-resultado {
+  margin-top: 1rem;
+  padding: 0.75rem;
+  background: #f0f4f8;
+  border-radius: 4px;
+  font-size: 1.1rem;
+}
+.simulador-resultado p {
+  margin: 0.25rem 0;
+}
+.simulador-aviso {
+  font-size: 0.875rem;
+  color: var(--cor-borda);
+  margin-top: 0.5rem;
+}
+/* Ações do formulário: botão salvar + link cancelar (Marco 7) */
+.form-acoes {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  margin-top: 1rem;
+}
+.botao-cancelar {
+  background: #ffffff;
+  color: var(--cor-primaria);
+  border: 2px solid var(--cor-primaria);
+}
+.botao-cancelar:hover {
+  background: #e8f0fe;
+  color: var(--cor-primaria-escura);
+}
+/* Ações em tabela (Marco 7) */
+.tabela-acoes {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+.botao-acao {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.875rem;
+  text-decoration: none;
+  border-radius: 4px;
+  border: 1px solid var(--cor-primaria);
+  background: #ffffff;
+  color: var(--cor-primaria);
+  font-weight: 600;
+  cursor: pointer;
+}
+.botao-acao:hover {
+  background: #e8f0fe;
+  color: var(--cor-primaria-escura);
+}
+.botao-remover {
+  border-color: var(--cor-erro);
+  color: var(--cor-erro);
+}
+.botao-remover:hover {
+  background: #fee2e2;
+  color: #7f1d1d;
+}
+/* Cabeçalho do detalhe da receita: título + botão editar (Marco 7) */
+.detalhe-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+.detalhe-header h2 {
+  margin: 0;
+}
+
+/* Dashboard */
+.dashboard-vazio {
+  font-size: 1.2rem;
+  color: #666;
+  text-align: center;
+  padding: 3rem;
+}
+
+.dashboard-kpis {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.kpi-card {
+  background: #ffffff;
+  border: 2px solid var(--cor-primaria);
+  border-radius: 8px;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.kpi-card h2 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1rem;
+  color: var(--cor-texto);
+  font-weight: 600;
+}
+
+.kpi-valor {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--cor-primaria);
+}
+
+.dashboard-grafico {
+  background: #ffffff;
+  border: 1px solid var(--cor-borda);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.dashboard-selector {
+  margin-bottom: 1.5rem;
+}
+
+.dashboard-selector label {
+  font-weight: 600;
+  margin-right: 0.5rem;
+}
+
+.dashboard-selector select {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid var(--cor-borda);
+  border-radius: 4px;
+}
+
+.dashboard-tabela-acessivel {
+  margin-top: 2rem;
+}
+
+.dashboard-tabela-acessivel summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--cor-primaria);
+  padding: 0.5rem;
+  user-select: none;
+}
+
+.dashboard-tabela-acessivel summary:hover {
+  text-decoration: underline;
+}
+
+.dashboard-tabela-acessivel[open] summary {
+  margin-bottom: 1rem;
+}
+
+.nav-lista a.ativo {
+  background: var(--cor-primaria-escura);
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+}
